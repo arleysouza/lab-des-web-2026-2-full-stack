@@ -106,30 +106,3 @@ As rotas são /alunos, /alunos/novo, /alunos/[ra], /alunos/[ra]/editar e /alunos
 Os antigos endpoints /api/students, /api/courses, /api/enrollments e /health foram removidos com o NestJS. Route Handlers podem ser um exercício posterior para expor uma API a outros clientes.
 
 Este exemplo não possui autenticação: quem acessar pode consultar e alterar estudantes. Antes de disponibilizar a usuários reais, implemente autenticação e autorização nas operações do servidor.
-
-## Verificação e roteiro de aula
-
-Na pasta front:
-
-```powershell
-npm run build
-npm run typecheck
-```
-
-Com a aplicação e o banco em execução:
-
-1. Liste estudantes e abra os detalhes.
-2. Cadastre um RA livre, edite o nome e remova o registro.
-3. Tente repetir um RA e remover um estudante com matrícula.
-4. Consulte /alunos/abc e um RA válido inexistente.
-5. Pare o banco, recarregue e observe a interface de erro. Reinicie-o e tente novamente.
-6. Acompanhe formulário → action → service → schema → banco no código.
-
-## Exercícios
-
-Implemente services, páginas, formulários e actions seguindo estudantes:
-
-- Cursos: listar, consultar, cadastrar, editar e remover. O ID é gerado pelo banco; o nome deve ser único e ter de 3 a 100 caracteres. Cursos com matrículas não podem ser removidos.
-- Matrículas: listar, consultar, cadastrar e remover pelo par studentRa e courseId. Não há atualização. Estudante e curso precisam existir e o par não pode se repetir.
-- Use o schema de enrollments para estudar chave composta e relacionamentos. Consulte estudantes e cursos para apresentar os nomes.
-- Inclua validação no servidor, carregamento, ausência de registro e conflitos. Use Server Actions para alterações e Server Components para consultas.

@@ -77,7 +77,7 @@ Navegador → Server Component → service → Drizzle → PostgreSQL
 
 As páginas chamam getStudents() e getStudent(ra) diretamente no servidor. Não há fetch HTTP intermediário nem useEffect para carregar a listagem. O layout de alunos mantém dynamic = "force-dynamic", renderizando por requisição; as consultas Drizzle não são envolvidas em cache.
 
-O pool é inicializado sob demanda, permitindo compilar sem banco ou credenciais. Ele é reutilizado durante hot reload e limita conexões, espera e duração de consultas. Os módulos database e services importam server-only para impedir sua inclusão em Client Components.
+O pool é inicializado sob demanda, permitindo compilar sem banco ou credenciais. Uma variável do módulo reutiliza o pool nas chamadas seguintes, usando as configurações padrão da biblioteca pg. Em desenvolvimento, o hot reload pode recriar o módulo e gerar um novo pool. Os módulos database e services importam server-only para impedir sua inclusão em Client Components.
 
 ### Alterações
 

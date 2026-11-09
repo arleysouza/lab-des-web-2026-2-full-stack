@@ -24,7 +24,7 @@ docker compose logs -f front database
 docker compose down
 ```
 
-O volume lógico aula3_database_data foi mantido para reutilizar os dados anteriores quando o nome do projeto Compose é o mesmo. Mudar a pasta ou o nome do projeto pode selecionar outro volume. Não use down -v se quiser preservar os dados. As credenciais devem corresponder às do banco existente.
+Os dados são persistidos no volume lógico `aula4_database_data`, separado do volume da aula 3. Os dados da aula anterior não são reutilizados automaticamente. Mudar a pasta ou o nome do projeto Compose também pode selecionar outro volume. Não use `docker compose down -v` se quiser preservar os dados. As credenciais devem corresponder às do banco existente.
 
 database/init.sql e database/seed.sql executam somente na primeira inicialização de um volume vazio. Os schemas Drizzle descrevem as tabelas para as consultas; não criam nem atualizam o banco automaticamente.
 

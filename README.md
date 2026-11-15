@@ -2,7 +2,6 @@
 
 Aplicação didática com Next.js (App Router e TypeScript), Drizzle ORM e PostgreSQL. O Next.js executa a interface e o backend; o NestJS foi removido.
 
-O CRUD de estudantes está completo. Cursos e matrículas permanecem no banco e nos schemas como exercícios: seus services, actions e telas devem ser desenvolvidos pelos alunos.
 
 ## Executar com Docker
 
@@ -26,7 +25,6 @@ docker compose down
 
 database/init.sql e database/seed.sql executam somente na primeira inicialização de um volume vazio. Os schemas Drizzle descrevem as tabelas para as consultas; não criam nem atualizam o banco automaticamente.
 
-Ao migrar uma execução anterior, use docker compose up -d --build --remove-orphans para remover o contêiner antigo do NestJS deste projeto Compose.
 
 ## Desenvolvimento local
 
